@@ -15,8 +15,8 @@
 @property (nonatomic, strong, readonly) UIScrollView *scrollView;
 @property (nonatomic, strong, readonly) UILabel *overlayTitle;
 @property (nonatomic, strong, readonly) UIPageControl *pageControl;
-@property (nonatomic, strong, readonly) UIButton *leftButton;
-@property (nonatomic, strong, readonly) UIButton *rightButton;
+@property (nonatomic, strong) UIButton *leftButton;
+@property (nonatomic, strong) UIButton *rightButton;
 
 @property (nonatomic, assign) ScrollingState currentState;
 @property (nonatomic, strong) NSArray *pages;
@@ -96,10 +96,8 @@
                forControlEvents:UIControlEventValueChanged];
     
     // UIButtons.
-    [self.leftButton setBackgroundColor:[UIColor darkGrayColor]];
-    [self.rightButton setBackgroundColor:[UIColor darkGrayColor]];
-    [self.leftButton setTitle:@"Button 1" forState:UIControlStateNormal];
-    [self.rightButton setTitle:@"Button 2" forState:UIControlStateNormal];
+       [self.leftButton setTitle:@"NEXT" forState:UIControlStateNormal];
+    [self.rightButton setTitle:@"SKIP" forState:UIControlStateNormal];
     [self.leftButton addTarget:self
                         action:@selector(didClickOnButton1:)
               forControlEvents:UIControlEventTouchUpInside];
@@ -190,6 +188,74 @@
     }
     
     return 0;
+}
+
+#pragma mark - Left and right button handling
+
+-(void)setLeftButtonTitle:(NSString *)title{
+
+    [self.leftButton setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setRightButtonTitle:(NSString *)title{
+    [self.rightButton setTitle:title forState:UIControlStateNormal];
+}
+
+-(void)setLeftButtonImage:(NSString *)name{
+
+    [self.leftButton setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+}
+-(void)setRightButtonImage:(NSString *)name{
+
+    [self.rightButton setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+}
+
+-(void)setHideLeftButton:(BOOL)hideLeftButton{
+    _hideLeftButton = hideLeftButton;
+    
+    if (hideLeftButton) {
+        self.leftButton.hidden = YES;
+    }
+    else{
+        self.leftButton.hidden = NO;
+    }
+}
+
+-(void)setHideRightButton:(BOOL)hideRightButton{
+
+    _hideRightButton = hideRightButton;
+    
+    if (hideRightButton) {
+        self.rightButton.hidden = YES;
+    }
+    else{
+        self.rightButton.hidden = NO;
+    }
+}
+
+-(void)setLeftButtonTitleColor:(UIColor *)leftButtonTitleColor{
+
+    
+    [self.leftButton setTitleColor:leftButtonTitleColor forState:UIControlStateNormal];
+}
+
+-(void)setRightButtonTitleColor:(UIColor *)rightButtonTitleColor{
+    
+    [self.rightButton setTitleColor:rightButtonTitleColor forState:UIControlStateNormal];
+}
+
+-(void)setLeftButtonBackgroundColor:(UIColor *)leftButtonBackgroundColor{
+
+    
+    self.leftButton.backgroundColor = leftButtonBackgroundColor;
+
+//    [self.leftButton setBackgroundColor:leftButtonBackgroundColor];
+}
+
+-(void)setRightButtonBackgroundColor:(UIColor *)rightButtonBackgroundColor{
+
+    self.rightButton.backgroundColor = rightButtonBackgroundColor;
+    //[self.rightButton setBackgroundColor:rightButtonBackgroundColor];
 }
 
 #pragma mark - Animations

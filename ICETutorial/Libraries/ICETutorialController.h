@@ -34,6 +34,16 @@ typedef void (^ButtonBlock)(UIButton *button);
 @property (nonatomic, assign) BOOL autoScrollEnabled;
 @property (nonatomic, weak) id<ICETutorialControllerDelegate> delegate;
 
+IBInspectable @property (nonatomic, assign) BOOL hideLeftButton;
+IBInspectable @property (nonatomic, assign) BOOL hideRightButton;
+
+IBInspectable @property (nonatomic, strong) UIColor* leftButtonTitleColor;
+IBInspectable @property (nonatomic, strong) UIColor* rightButtonTitleColor;
+
+IBInspectable @property (nonatomic, strong) UIColor* leftButtonBackgroundColor;
+IBInspectable @property (nonatomic, strong) UIColor* rightButtonBackgroundColor;
+
+
 // Inits.
 - (instancetype)initWithPages:(NSArray *)pages;
 - (instancetype)initWithPages:(NSArray *)pages
@@ -46,6 +56,14 @@ typedef void (^ButtonBlock)(UIButton *button);
 // Scrolling.
 - (void)startScrolling;
 - (void)stopScrolling;
+
+// Left and Right button title and image handling
+-(void)setLeftButtonTitle:(NSString *)title;
+-(void)setRightButtonTitle:(NSString *)title;
+
+-(void)setLeftButtonImage:(NSString *)name;
+-(void)setRightButtonImage:(NSString *)name;
+
 
 // State.
 - (ScrollingState)getCurrentState;

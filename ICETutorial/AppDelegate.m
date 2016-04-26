@@ -17,23 +17,23 @@
     ICETutorialPage *layer1 = [[ICETutorialPage alloc] initWithTitle:@"Picture 1"
                                                             subTitle:@"Champs-Elysées by night"
                                                          pictureName:@"tutorial_background_00@2x.jpg"
-                                                            duration:3.0];
+                                                            duration:0.0];
     ICETutorialPage *layer2 = [[ICETutorialPage alloc] initWithTitle:@"Picture 2"
                                                             subTitle:@"The Eiffel Tower with\n cloudy weather"
                                                          pictureName:@"tutorial_background_01@2x.jpg"
-                                                            duration:3.0];
+                                                            duration:0.0];
     ICETutorialPage *layer3 = [[ICETutorialPage alloc] initWithTitle:@"Picture 3"
                                                             subTitle:@"An other famous street of Paris"
                                                          pictureName:@"tutorial_background_02@2x.jpg"
-                                                            duration:3.0];
+                                                            duration:0.0];
     ICETutorialPage *layer4 = [[ICETutorialPage alloc] initWithTitle:@"Picture 4"
                                                             subTitle:@"The Eiffel Tower with a better weather"
                                                          pictureName:@"tutorial_background_03@2x.jpg"
-                                                            duration:3.0];
+                                                            duration:0.0];
     ICETutorialPage *layer5 = [[ICETutorialPage alloc] initWithTitle:@"Picture 5"
                                                             subTitle:@"The Louvre's Museum Pyramide"
                                                          pictureName:@"tutorial_background_04@2x.jpg"
-                                                            duration:3.0];
+                                                            duration:0.0];
     NSArray *tutorialLayers = @[layer1,layer2,layer3,layer4,layer5];
 
     // Set the common style for the title.
@@ -53,9 +53,13 @@
                                                               delegate:self];
     
     // Run it.
-    [self.viewController startScrolling];
+   // [self.viewController startScrolling];
     
     self.window.rootViewController = self.viewController;
+    self.viewController.hideLeftButton = YES;
+    self.viewController.rightButtonTitleColor = [UIColor greenColor];
+    self.viewController.rightButtonBackgroundColor = [UIColor whiteColor];
+
     [self.window makeKeyAndVisible];
     return YES;
 }
