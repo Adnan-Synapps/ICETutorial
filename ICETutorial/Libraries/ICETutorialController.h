@@ -36,6 +36,7 @@ typedef void (^ButtonBlock)(UIButton *button);
 
 IBInspectable @property (nonatomic, assign) BOOL hideLeftButton;
 IBInspectable @property (nonatomic, assign) BOOL hideRightButton;
+IBInspectable @property (nonatomic, assign) BOOL hideGradientView;
 
 IBInspectable @property (nonatomic, strong) UIColor* leftButtonTitleColor;
 IBInspectable @property (nonatomic, strong) UIColor* rightButtonTitleColor;

@@ -59,6 +59,7 @@
     self.viewController.hideLeftButton = YES;
     self.viewController.rightButtonTitleColor = [UIColor greenColor];
     self.viewController.rightButtonBackgroundColor = [UIColor whiteColor];
+    self.viewController.hideGradientView = YES;
 
     [self.window makeKeyAndVisible];
     return YES;

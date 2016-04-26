@@ -249,15 +249,27 @@
     
     self.leftButton.backgroundColor = leftButtonBackgroundColor;
 
-//    [self.leftButton setBackgroundColor:leftButtonBackgroundColor];
 }
 
 -(void)setRightButtonBackgroundColor:(UIColor *)rightButtonBackgroundColor{
 
     self.rightButton.backgroundColor = rightButtonBackgroundColor;
-    //[self.rightButton setBackgroundColor:rightButtonBackgroundColor];
 }
 
+-(void)setHideGradientView:(BOOL)hideGradientView{
+
+    _hideGradientView = hideGradientView;
+    
+    if (hideGradientView) {
+        
+        self.gradientView.hidden = YES;
+    }
+    else{
+    
+        self.gradientView.hidden = NO;
+
+    }
+}
 #pragma mark - Animations
 - (void)animateScrolling {
     if (self.currentState & ScrollingStateManual) {
