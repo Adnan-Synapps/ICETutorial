@@ -60,7 +60,7 @@
     self.viewController.rightButtonTitleColor = [UIColor greenColor];
     self.viewController.rightButtonBackgroundColor = [UIColor whiteColor];
     self.viewController.hideGradientView = YES;
-
+    self.viewController.overLayTitle = @"";
     [self.window makeKeyAndVisible];
     return YES;
 }
