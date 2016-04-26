@@ -425,8 +425,8 @@
 // Preset the origin state.
 - (void)setOriginLayersState {
     self.currentState = ScrollingStateAuto;
-    [self.backLayerView setBackgroundColor:[UIColor blackColor]];
-    [self.frontLayerView setBackgroundColor:[UIColor blackColor]];
+   // [self.backLayerView setBackgroundColor:[UIColor blackColor]];
+    //[self.frontLayerView setBackgroundColor:[UIColor blackColor]];
     [self setLayersPicturesWithIndex:0];
 }
 
