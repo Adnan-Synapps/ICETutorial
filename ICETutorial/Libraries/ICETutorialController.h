@@ -44,6 +44,9 @@ IBInspectable @property (nonatomic, strong) UIColor* rightButtonTitleColor;
 IBInspectable @property (nonatomic, strong) UIColor* leftButtonBackgroundColor;
 IBInspectable @property (nonatomic, strong) UIColor* rightButtonBackgroundColor;
 
+IBInspectable @property (nonatomic, strong) UIColor *pageControlTintColor;
+IBInspectable @property (nonatomic, strong) UIColor *pageControlSelectedColor;
+
 IBInspectable @property (nonatomic, copy) NSString* overLayTitle;
 
 

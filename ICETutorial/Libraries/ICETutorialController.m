@@ -139,7 +139,7 @@
 
     // PageControl.
     [self.pageControl setTranslatesAutoresizingMaskIntoConstraints:NO];
-    [constraints addObject:@"V:[_pageControl(==32)]-60-|"];
+    [constraints addObject:@"V:[_pageControl(==32)]-120-|"];
     [constraints addObject:@"H:|-140-[_pageControl(==40)]"];
 
     // GradientView.
@@ -274,6 +274,16 @@
 -(void)setOverLayTitle:(NSString *)overLayTitle{
 
     self.overlayTitle.text = overLayTitle;
+}
+
+-(void)setPageControlTintColor:(UIColor *)pageControlTintColor{
+
+    self.pageControl.pageIndicatorTintColor = pageControlTintColor;
+}
+
+-(void)setPageControlSelectedColor:(UIColor *)pageControlSelectedColor{
+
+    self.pageControl.currentPageIndicatorTintColor = pageControlSelectedColor;
 }
 #pragma mark - Animations
 - (void)animateScrolling {
@@ -425,8 +435,8 @@
 // Preset the origin state.
 - (void)setOriginLayersState {
     self.currentState = ScrollingStateAuto;
-   // [self.backLayerView setBackgroundColor:[UIColor blackColor]];
-    //[self.frontLayerView setBackgroundColor:[UIColor blackColor]];
+    [self.backLayerView setBackgroundColor:[UIColor whiteColor]];
+    [self.frontLayerView setBackgroundColor:[UIColor whiteColor]];
     [self setLayersPicturesWithIndex:0];
 }
 
